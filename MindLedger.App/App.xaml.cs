@@ -19,11 +19,11 @@ namespace MindLedger.App
                 .ConfigureServices((context, services) =>
                 {
                     services.AddDbContext<MindLedgerDbContext>(options =>
-                        options.UseSqlite("Data Source=notes.db"));
+                        options.UseSqlite("Data Source=MindLedger.db"));
 
                     services.AddScoped<INoteRepository, SqliteNoteRepository>();
+                    services.AddScoped<MainWindowViewModel>();
                     services.AddSingleton<MainWindow>();
-                    services.AddSingleton<MainWindowViewModel>();
                 })
                 .Build();
         }
