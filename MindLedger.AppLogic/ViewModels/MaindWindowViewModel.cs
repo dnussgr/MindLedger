@@ -11,7 +11,7 @@ public partial class MainWindowViewModel : ObservableObject
 {
     private readonly INoteRepository _noteRepository;
 
-    public ObservableCollection<Note> Notes { get; } = new();
+    public ObservableCollection<NoteBase> Notes { get; } = new();
 
     [ObservableProperty]
     private string title = string.Empty;
@@ -20,7 +20,7 @@ public partial class MainWindowViewModel : ObservableObject
     private string content = string.Empty;
 
     [ObservableProperty]
-    private Note? selectedNote;
+    private NoteBase? selectedNote;
 
     public MainWindowViewModel(INoteRepository noteRepository)
     {
@@ -41,7 +41,7 @@ public partial class MainWindowViewModel : ObservableObject
     {
         if (string.IsNullOrWhiteSpace(Title)) return;
 
-        var note = new Note
+        var note = new WorldNote
         {
             Title = Title,
             Content = Content

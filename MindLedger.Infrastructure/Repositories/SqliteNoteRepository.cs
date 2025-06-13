@@ -20,20 +20,20 @@ public class SqliteNoteRepository : INoteRepository
         _db = db;
     }
 
-    public async Task<IEnumerable<Note>> GetAllAsync()
+    public async Task<IEnumerable<NoteBase>> GetAllAsync()
     {
         return await _db.Notes
             .OrderByDescending(n => n.UpdatedAt)
             .ToListAsync();
     }
 
-    public async Task AddAsync(Note note)
+    public async Task AddAsync(NoteBase note)
     {
         _db.Notes.Add(note);
         await _db.SaveChangesAsync();
     }
 
-    public async Task UpdateAsync(Note note)
+    public async Task UpdateAsync(NoteBase note)
     {
         _db.Notes.Update(note);
         await _db.SaveChangesAsync();

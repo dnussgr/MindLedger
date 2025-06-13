@@ -19,8 +19,4 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\MindLedger.Application\MindLedger.Application.csproj" />
-  </ItemGroup>
-
 </Project>
