@@ -1,10 +1,17 @@
 # MindLedger
 
-MindLedger ist eine Desktop-Anwendung zur Verwaltung von Notizen. Ziel ist es, eine klar strukturierte, lokal gespeicherte Anwendung zu entwickeln, die moderne Softwarearchitektur mit einem benutzerfreundlichen Design verbindet. Das Projekt wird mit .NET 9, WPF und SQLite umgesetzt und orientiert sich an Clean Architecture und dem MVVM-Pattern.
+**MindLedger** ist eine moderne, lokal laufende Notizverwaltung für Windows, entwickelt mit **.NET 9**, **WPF** und **SQLite**. Ziel des Projekts ist es, eine wartbare, asynchrone Anwendung auf Basis von Clean Architecture und MVVM bereitzustellen – mit Fokus auf ein durchdachtes UI/UX, das WPF UI (lepo.co) verwendet.
 
-## Aktueller Stand
+## Projektstatus
 
-Das Projekt befindet sich noch im Aufbau. Die grundlegende Struktur steht bereits: Solution-Setup, Projektaufteilung, erste Dienste und die Einbindung von Dependency Injection wurden umgesetzt. Die konkrete Anwendungslogik und Benutzeroberfläche werden schrittweise entwickelt.
+Das Projekt befindet sich in der aktiven Entwicklung. Die grundlegende Architektur ist bereits implementiert:
+
+- Clean Architecture mit klarer Trennung von UI, Logik und Datenzugriff
+- Setup für Dependency Injection und Entity Framework Core
+- Erste ViewModels, Services und Datenbankzugriff mit SQLite
+- Integration des UI-Toolkits [WPF UI](https://wpfui.lepo.co/) (Theming, Controls)
+
+---
 
 ## Projektstruktur
 
@@ -15,10 +22,12 @@ Das Projekt befindet sich noch im Aufbau. Die grundlegende Struktur steht bereit
 
 ## Was bisher umgesetzt wurde
 
-- Einrichtung der Projektmappe mit sauberer Trennung der Schichten
-- Anbindung von Dependency Injection mittels `Microsoft.Extensions.Hosting`
-- MVVM-Basiskonzept im Frontend
-- Vorbereitung für die Implementierung der Datenpersistenz
+- Projektstruktur und Solution-Setup
+- Dependency Injection mit `Microsoft.Extensions.Hosting`
+- EF Core + SQLite
+- ViewModel-Basis mit `CommunityToolkit.Mvvm`
+- Theme-Setup über WPF-UI
+- Startup über Dependency Injection
 
 ## Geplante Funktionen
 
@@ -27,15 +36,15 @@ Das Projekt befindet sich noch im Aufbau. Die grundlegende Struktur steht bereit
 - Filter- und Suchfunktion
 - Umschaltbarer Dark-/Light-Mode
 - Asynchrone Datenzugriffe für bessere Reaktionsfähigkeit
-- Lokale Speicherung mit SQLite
 
 ## Verwendete Technologien
 
-- .NET 9
-- WPF (Windows Presentation Foundation)
-- Entity Framework Core
-- SQLite
-- MVVM
+- [.NET 9](https://github.com/dotnet/core)
+- [WPF](https://learn.microsoft.com/dotnet/desktop/wpf/)
+- [WPF UI](https://wpfui.lepo.co/)
+- [SQLite](https://www.sqlite.org/index.html)
+- [Entity Framework Core](https://learn.microsoft.com/ef/)
+- [MVVM Toolkit](https://learn.microsoft.com/dotnet/communitytoolkit/mvvm/)
 - Clean Architecture
 - Dependency Injection
 
