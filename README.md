@@ -15,10 +15,11 @@ Das Projekt befindet sich in der aktiven Entwicklung. Die grundlegende Architekt
 
 ## Projektstruktur
 
-- `MindLedger.App`: WPF-Anwendung mit Einstiegspunkt und UI
+- `MindLedger.App`: WPF UI-Projekt (UI, Theme, Einstiegspunkt)
 - `MindLedger.AppLogic`: Anwendungsschicht mit Services und ViewModels
-- `MindLedger.Domain`: Zentrale Domänenklassen und Interfaces
-- `MindLedger.Infrastructure`: (Geplant) Datenzugriff mit SQLite über Entity Framework Core
+- `MindLedger.Domain`: Domänenschicht (Note-Entität, Interfaces)
+- `MindLedger.Infrastructure`: Infrastruktur (EF Core, SQLite)
+- `MindLedger.Tests`: Unit-Tests
 
 ## Was bisher umgesetzt wurde
 
