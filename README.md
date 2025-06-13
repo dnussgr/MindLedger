@@ -1,6 +1,9 @@
 # MindLedger
 
-**MindLedger** ist eine moderne, lokal laufende Notizverwaltung für Windows, entwickelt mit **.NET 9**, **WPF** und **SQLite**. Ziel des Projekts ist es, eine wartbare, asynchrone Anwendung auf Basis von Clean Architecture und MVVM bereitzustellen – mit Fokus auf ein durchdachtes UI/UX, das WPF UI (lepo.co) verwendet.
+**MindLedger** ist eine strukturierte Notiz- und Kampagnenverwaltungs-App für **Dungeon Master** (D&D 5e oder andere TTRPGs). Die Anwendung wird mit **.NET 9**, **WPF**, **Entity Framework Core** und **WPF UI** entwickelt und kombiniert moderne Softwarearchitektur mit einem Interface, das speziell auf die Bedürfnisse von Spielleitern zugeschnitten ist.
+
+## Ziel
+MindLedger soll mehr sein als eine einfache Notiz-App: Es soll DMs ermöglichen, **ihre Welt strukturiert aufzubauen**, **Sitzungen effizient zu planen** und **alle Elemente einer Kampagne in einer zentralen, lokal gespeicherten Anwendung zu verwalten** – ohne Abhängigkeit von Online-Plattformen.
 
 ## Projektstatus
 
@@ -13,6 +16,28 @@ Das Projekt befindet sich in der aktiven Entwicklung. Die grundlegende Architekt
 
 ---
 
+## Geplante Funktionen
+
+- **Kampagnenstruktur mit Tiefe**  
+  Kampagne → Sessions, Orte, Charaktere, NPCs, Worldbuilding, Tags
+
+- **Markdown-Editor mit Export**  
+  - Bearbeitung direkt im Editor
+  - Export als `.md`-Datei (z. B. für Obsidian oder Git-Repos)
+
+- **Tag-System**  
+  - Beliebig viele Tags pro Eintrag
+  - Filter- und Suchfunktion über Titel, Inhalt, Tags
+
+- **Dark-/Light-Mode & modernes UI**  
+  - Styling durch [WPF UI](https://wpfui.lepo.co/)
+  - Fokus auf Lesbarkeit und minimalistische Navigation
+
+- **Dateianhänge (optional)**  
+  - Bilder, Karten, Handouts direkt an Notizen anhängen
+
+---
+ 
 ## Projektstruktur
 
 - `MindLedger.App`: WPF UI-Projekt (UI, Theme, Einstiegspunkt)
@@ -30,13 +55,15 @@ Das Projekt befindet sich in der aktiven Entwicklung. Die grundlegende Architekt
 - Theme-Setup über WPF-UI
 - Startup über Dependency Injection
 
-## Geplante Funktionen
+---
 
-- Erstellen, Bearbeiten und Löschen von Notizen (CRUD)
-- Zuordnung von Kategorien oder Tags
-- Filter- und Suchfunktion
-- Umschaltbarer Dark-/Light-Mode
-- Asynchrone Datenzugriffe für bessere Reaktionsfähigkeit
+## Nächste Schritte
+
+- UI: Navigationsstruktur nach Kampagnenbaum
+- CRUD-Oberfläche für Sessions, Charaktere, NPCs etc.
+- Markdown-Editor mit Exportfunktion
+- Tagging- und Filterlogik
+- Synchronisierbare lokale Datenbankstruktur
 
 ## Verwendete Technologien
 
