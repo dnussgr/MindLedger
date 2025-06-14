@@ -4,37 +4,43 @@
 
 ## Ziel
 MindLedger soll mehr sein als eine einfache Notiz-App: Es soll DMs ermöglichen, **ihre Welt strukturiert aufzubauen**, **Sitzungen effizient zu planen** und **alle Elemente einer Kampagne in einer zentralen, lokal gespeicherten Anwendung zu verwalten** – ohne Abhängigkeit von Online-Plattformen.
+Warum nicht einfach Obsidian, Notion, WorldAnvil oder OneNote?
+Obsidian und Notion sind sehr komplexe Tools und haben oft eine steile Lernkurve, WorldAnvil ist zwar spezialisiert, hat aber ein Abo-Modell.
+
+**Viele Spielleiter verwenden OneNote für ihre Kampagnen – warum also MindLedger?**
+
+OneNote ist flexibel, aber nicht spezialisiert. Es bietet keine Unterscheidung zwischen verschiedenen Notiztypen (z. B. Session, NPC, Ort), keine logischen Verknüpfungen zwischen Einträgen und keine durchsuchbaren Tags mit semantischer Bedeutung.
+
+MindLedger ist für Spielleiter konzipiert, die mehr Struktur wollen – ohne Komplexität.
+Ein paar zentrale Unterschiede:
+
+| Feature                         | OneNote                 | MindLedger                                     |
+| ------------------------------- | ----------------------- | ---------------------------------------------- |
+| Strukturierung nach Typen       | manuell über Seiten     | fest definierte Entitäten (z. B. Session, NPC) |
+| Zugehörigkeit zu Kampagnen      | manuell über Abschnitte | logisch abgebildet über Datenmodell            |
+| Tagging                         | rudimentär, keine Suche | durchsuchbar, filterbar, mehrfach nutzbar      |
+| Sessions automatisch nummeriert | nein                    | ja                                             |
+| Markdown-Unterstützung          | nein                    | geplant integriert + Export                    |
+| Export (zB nach Obsidian, Homebewery)       | nicht sinnvoll möglich  | `.md`-Export vorbereitet                       |
+| Speicherort                     | primär OneDrive         | vollständig lokal, SQLite-basiert              |
 
 ## Projektstatus
 
 Das Projekt befindet sich in der aktiven Entwicklung. Die grundlegende Architektur ist bereits implementiert:
 
-- Clean Architecture mit klarer Trennung von UI, Logik und Datenzugriff
-- Setup für Dependency Injection und Entity Framework Core
-- Erste ViewModels, Services und Datenbankzugriff mit SQLite
-- Integration des UI-Toolkits [WPF UI](https://wpfui.lepo.co/) (Theming, Controls)
+- Kernarchitektur: Clean Architecture, DI, EF Core, SQLite  
+- `NoteBase`-Vererbung mit Ableitungen (Session, Character ...)  
+- Tagging-Infrastruktur inkl. Repository & SQLite-Tests  
+- WPF UI-Grundgerüst + Themeinitialisierung
 
 ---
 
-## Geplante Funktionen
+## In Arbeit
 
-- **Kampagnenstruktur mit Tiefe**  
-  Kampagne → Sessions, Orte, Charaktere, NPCs, Worldbuilding, Tags
-
-- **Markdown-Editor mit Export**  
-  - Bearbeitung direkt im Editor
-  - Export als `.md`-Datei (z. B. für Obsidian oder Git-Repos)
-
-- **Tag-System**  
-  - Beliebig viele Tags pro Eintrag
-  - Filter- und Suchfunktion über Titel, Inhalt, Tags
-
-- **Dark-/Light-Mode & modernes UI**  
-  - Styling durch [WPF UI](https://wpfui.lepo.co/)
-  - Fokus auf Lesbarkeit und minimalistische Navigation
-
-- **Dateianhänge (optional)**  
-  - Bilder, Karten, Handouts direkt an Notizen anhängen
+- UI für Kampagnen-Navigation & Accordion-Listen  
+- Markdown-Editor inkl. Export  
+- Multitagging beim Notizerstellen  
+- Such- und Filterfeature
 
 ---
  
@@ -59,11 +65,11 @@ Das Projekt befindet sich in der aktiven Entwicklung. Die grundlegende Architekt
 
 ## Nächste Schritte
 
-- UI: Navigationsstruktur nach Kampagnenbaum
-- CRUD-Oberfläche für Sessions, Charaktere, NPCs etc.
-- Markdown-Editor mit Exportfunktion
-- Tagging- und Filterlogik
-- Synchronisierbare lokale Datenbankstruktur
+- [ ] Kampagnen-Dropdown & Kontextwechsel  
+- [ ] Accordion-Navigation (Sessions, NPCs…)  
+- [ ] Tag-Auswahl & Erstellung im Editor  
+- [ ] Markdown-Preview & `.md` Export  
+- [ ] Suche, Sortierung & Filterung
 
 ## Verwendete Technologien
 
