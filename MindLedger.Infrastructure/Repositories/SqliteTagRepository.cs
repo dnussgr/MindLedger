@@ -1,15 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MindLedger.Domain;
+using MindLedger.Domain.Interfaces;
 using MindLedger.Infrastructure.Persistence;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MindLedger.Infrastructure.Repositories
 {
-    public class SqliteTagRepository
+    public class SqliteTagRepository : ITagRepository
     {
         private readonly MindLedgerDbContext _db;
 
@@ -109,7 +105,7 @@ namespace MindLedger.Infrastructure.Repositories
         /// <returns>A task that represents the asynchronous operation.  The task result contains an <see cref="IEnumerable{T}"/>
         /// of <see cref="NoteBase"/> objects  that are associated with the specified tag, ordered by their last update
         /// time in descending order.</returns>
-        public async Task<IEnumerable<NoteBase>> GetNoteByTagAsync(Guid tagId)
+        public async Task<IEnumerable<NoteBase>> GetNotesByTagAsync(Guid tagId)
         {
             return await _db.Notes
                 .Where(n => n.Tags.Any(t =>  t.Id == tagId))

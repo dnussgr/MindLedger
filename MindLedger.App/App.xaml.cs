@@ -5,6 +5,7 @@ using MindLedger.AppLogic.ViewModels;
 using MindLedger.Domain.Interfaces;
 using MindLedger.Infrastructure.Persistence;
 using MindLedger.Infrastructure.Repositories;
+using System.IO;
 using System.Windows;
 
 namespace MindLedger.App
@@ -19,11 +20,13 @@ namespace MindLedger.App
                 .ConfigureServices((context, services) =>
                 {
                     services.AddDbContext<MindLedgerDbContext>(options =>
-                        options.UseSqlite("Data Source=MindLedger.db"));
+                        options.UseSqlite("Data Source=" + Path.Combine(AppContext.BaseDirectory, "MindLedger.db")));
 
                     services.AddScoped<INoteRepository, SqliteNoteRepository>();
                     services.AddScoped<MainWindowViewModel>();
                     services.AddSingleton<MainWindow>();
+                    services.AddScoped<ITagRepository, SqliteTagRepository>();
+
                 })
                 .Build();
         }

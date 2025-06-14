@@ -10,7 +10,10 @@ namespace MindLedger.AppLogic.ViewModels;
 public partial class MainWindowViewModel : ObservableObject
 {
     private readonly INoteRepository _noteRepository;
+    private readonly ITagRepository _tagRepository;
 
+    public ObservableCollection<Tag> AllTags { get; } = new();
+    public ObservableCollection<Tag> SelectedTags { get; } = new();
     public ObservableCollection<NoteBase> Notes { get; } = new();
 
     [ObservableProperty]
@@ -22,9 +25,10 @@ public partial class MainWindowViewModel : ObservableObject
     [ObservableProperty]
     private NoteBase? selectedNote;
 
-    public MainWindowViewModel(INoteRepository noteRepository)
+    public MainWindowViewModel(INoteRepository noteRepository, ITagRepository tagRepository)
     {
         _noteRepository = noteRepository;
+        _tagRepository = tagRepository;
     }
 
 
@@ -69,6 +73,8 @@ public partial class MainWindowViewModel : ObservableObject
 
         Title = string.Empty;
         Content = string.Empty;
+
+        note.Tags = SelectedTags.ToList();
     }
 
 
@@ -86,5 +92,15 @@ public partial class MainWindowViewModel : ObservableObject
         await _noteRepository.DeleteAsync(SelectedNote.Id);
         Notes.Remove(SelectedNote);
         SelectedNote = null;
+    }
+
+
+    [RelayCommand]
+    public async Task LoadTagsAsync()
+    {
+        AllTags.Clear();
+        var tags = await _tagRepository.GetAllAsync();
+        foreach (var tag in tags)
+            AllTags.Add(tag);
     }
 }
