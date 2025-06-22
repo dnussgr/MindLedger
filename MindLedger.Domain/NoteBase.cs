@@ -10,4 +10,7 @@ public abstract class NoteBase
     public DateTime UpdatedAt { get; set;} = DateTime.Now;
 
     public List<Tag> Tags { get; set; } = new();
+
+    public Guid CampaignId { get; set; }
+    public Campaign? Campaign { get; set; }
 }

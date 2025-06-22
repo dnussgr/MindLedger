@@ -9,12 +9,14 @@ namespace MindLedger.AppLogic.ViewModels;
 
 public partial class MainWindowViewModel : ObservableObject
 {
+    private readonly ICampaignRepository _campaignRepository;
     private readonly INoteRepository _noteRepository;
     private readonly ITagRepository _tagRepository;
 
+    public ObservableCollection<Campaign> Campaigns { get; } = new();
+    public ObservableCollection<NoteBase> Notes { get; } = new();
     public ObservableCollection<Tag> AllTags { get; } = new();
     public ObservableCollection<Tag> SelectedTags { get; } = new();
-    public ObservableCollection<NoteBase> Notes { get; } = new();
 
     [ObservableProperty]
     private string title = string.Empty;
@@ -23,12 +25,31 @@ public partial class MainWindowViewModel : ObservableObject
     private string content = string.Empty;
 
     [ObservableProperty]
+    private Campaign? selectedCampaign;
+
+    [ObservableProperty]
     private NoteBase? selectedNote;
 
-    public MainWindowViewModel(INoteRepository noteRepository, ITagRepository tagRepository)
+    public MainWindowViewModel(INoteRepository noteRepository, ITagRepository tagRepository, ICampaignRepository campaignRepository)
     {
+        _campaignRepository = campaignRepository;
         _noteRepository = noteRepository;
         _tagRepository = tagRepository;
+    }
+
+    /// <summary>
+    /// Asynchronously loads all campaigns from the repository and updates the collection.
+    /// </summary>
+    /// <remarks>This method clears the current collection of campaigns and populates it with the campaigns retrieved
+    /// from the repository. It is intended to be used when refreshing or initializing the campaigns collection.</remarks>
+    /// <returns>A task that represents the asynchronous operation</returns>
+    [RelayCommand]
+    public async Task LoadCampaignAsync()
+    {
+        Campaigns.Clear();
+        var campaigns = await _campaignRepository.GetAllAsync();
+        foreach (var c in campaigns)
+            Campaigns.Add(c);
     }
 
 

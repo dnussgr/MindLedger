@@ -27,7 +27,18 @@
             <ui:DropDownButton Margin="10"
                                Height="50"
                                Width="210"
-                               Content="Placeholder Kampagne"/>
+                               Content="Kampagne wählen"
+                               ClickMode="Press"
+                               IsDropDownOpen="True">
+                <ui:DropDownButton.Flyout>
+                    <ui:Flyout Placement="Bottom">
+                        <Border Background="White" BorderBrush="Gray" BorderThickness="1" Padding="10">
+                            <TextBlock Text="Testinhalt" Foreground="Black"/>
+                        </Border>
+                    </ui:Flyout>
+                </ui:DropDownButton.Flyout>
+            </ui:DropDownButton>
+            
             
             <Expander Header="Sessions"
                       IsExpanded="True"
