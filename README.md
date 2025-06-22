@@ -3,16 +3,15 @@
 **MindLedger** ist eine strukturierte Notiz- und Kampagnenverwaltungs-App für **Dungeon Master** (D&D 5e oder andere TTRPGs). Die Anwendung wird mit **.NET 9**, **WPF**, **Entity Framework Core** und **WPF UI** entwickelt und kombiniert moderne Softwarearchitektur mit einem Interface, das speziell auf die Bedürfnisse von Spielleitern zugeschnitten ist.
 
 ## Ziel
-MindLedger soll mehr sein als eine einfache Notiz-App: Es soll DMs ermöglichen, **ihre Welt strukturiert aufzubauen**, **Sitzungen effizient zu planen** und **alle Elemente einer Kampagne in einer zentralen, lokal gespeicherten Anwendung zu verwalten** – ohne Abhängigkeit von Online-Plattformen.
-Warum nicht einfach Obsidian, Notion, WorldAnvil oder OneNote?
-Obsidian und Notion sind sehr komplexe Tools und haben oft eine steile Lernkurve, WorldAnvil ist zwar spezialisiert, hat aber ein Abo-Modell.
+MindLedger soll mehr sein als eine klassische Notiz-App: Es ermöglicht DMs, **ihre Welt systematisch aufzubauen**, **Sitzungen effizient zu planen** und **alle Elemente einer Kampagne zentral und lokal zu verwalten** – ganz ohne Cloud-Abhängigkeit.
 
-**Viele Spielleiter verwenden OneNote für ihre Kampagnen – warum also MindLedger?**
+### Warum nicht Obsidian, Notion, WorldAnvil – oder OneNote?
 
-OneNote ist flexibel, aber nicht spezialisiert. Es bietet keine Unterscheidung zwischen verschiedenen Notiztypen (z. B. Session, NPC, Ort), keine logischen Verknüpfungen zwischen Einträgen und keine durchsuchbaren Tags mit semantischer Bedeutung.
+- **Obsidian / Notion**: Sehr leistungsfähig, aber oft überladen und komplex.
+- **WorldAnvil**: Speziell für TTRPG, aber im vollen Umfang kostenpflichtig.
+- **OneNote**: Flexibel, aber generisch – keine Kampagnenlogik, kein semantisches Tagging, keine strukturierten Notiztypen.
 
-MindLedger ist für Spielleiter konzipiert, die mehr Struktur wollen – ohne Komplexität.
-Ein paar zentrale Unterschiede:
+### Warum **MindLedger** statt OneNote?
 
 | Feature                         | OneNote                 | MindLedger                                     |
 | ------------------------------- | ----------------------- | ---------------------------------------------- |
@@ -24,52 +23,53 @@ Ein paar zentrale Unterschiede:
 | Export (zB nach Obsidian, Homebewery)       | nicht sinnvoll möglich  | `.md`-Export vorbereitet                       |
 | Speicherort                     | primär OneDrive         | vollständig lokal, SQLite-basiert              |
 
+MindLedger richtet sich an Spielleiter, die **mehr Struktur wollen – ohne zusätzliche Komplexität.**
+
 ## Projektstatus
 
 Das Projekt befindet sich in der aktiven Entwicklung. Die grundlegende Architektur ist bereits implementiert:
 
-- Kernarchitektur: Clean Architecture, DI, EF Core, SQLite  
-- `NoteBase`-Vererbung mit Ableitungen (Session, Character ...)  
-- Tagging-Infrastruktur inkl. Repository & SQLite-Tests  
-- WPF UI-Grundgerüst + Themeinitialisierung
+- Clean Architecture mit klarer Trennung von UI, Logik, Daten
+- `NoteBase`-Vererbung für verschiedene Notiztypen
+- Tagging mit Repository + EF Core Anbindung
+- UI-Grundgerüst mit WPF UI Theme
 
 ---
 
 ## In Arbeit
 
-- Text-Editor inkl. Export  
-- Multitagging beim Notizerstellen  
-- Such- und Filterfeature
+- Texteditor inkl. Markdown-Export  
+- Tagging (Mehrfachauswahl beim Erstellen)  
+- Suche & Filterung nach Tags, Titel, Inhalt 
 
 ---
  
 ## Projektstruktur
 
-- `MindLedger.App`: WPF UI-Projekt (UI, Theme, Einstiegspunkt)
-- `MindLedger.AppLogic`: Anwendungsschicht mit Services und ViewModels
-- `MindLedger.Domain`: Domänenschicht (Note-Entität, Interfaces)
-- `MindLedger.Infrastructure`: Infrastruktur (EF Core, SQLite)
+- `MindLedger.App`: WPF-Oberfläche, Einstiegspunkt, Theme
+- `MindLedger.AppLogic`: ViewModels, Services, State Management
+- `MindLedger.Domain`: Entitäten und Schnittstellen
+- `MindLedger.Infrastructure`: EF Core, Datenbankzugriff
 - `MindLedger.Tests`: Unit-Tests
 
 ## Was bisher umgesetzt wurde
 
-- Projektstruktur und Solution-Setup
-- Dependency Injection mit `Microsoft.Extensions.Hosting`
-- EF Core + SQLite
-- ViewModel-Basis mit `CommunityToolkit.Mvvm`
-- Theme-Setup über WPF-UI
-- Startup über Dependency Injection
-- UI - Grundsätzliches Design vorhanden, bis auf Editor noch keine Funktion
+- Projektstruktur, Solution Setup
+- Dependency Injection über `Microsoft.Extensions.Hosting`
+- EF Core + SQLite + Migrations
+- ViewModels mit `CommunityToolkit.Mvvm`
+- Theme-Integration mit WPF UI
+- UI-Layout & Navigation ohne Editorlogik
 
 ---
 
 ## Nächste Schritte
 
-- [ ] Kampagnen-Dropdown & Kontextwechsel - Funktion  
-- [ ] Accordion-Navigation (Sessions, NPCs…) - Funktion  
-- [ ] Tag-Auswahl & Erstellung im Editor  
-- [ ] Markdown-Preview & `.md` Export  
-- [ ] Suche, Sortierung & Filterung - Funktion
+- [ ] Kampagnen-Dropdown mit Kontextwechsel  
+- [ ] Accordion-Navigation (Sessions, NPCs etc.)  
+- [ ] Tag-Auswahl & Erstellung in Notizen  
+- [ ] Markdown-Editor & Exportfunktion  
+- [ ] Suche, Sortierung & Filterung
 
 ## Verwendete Technologien
 
