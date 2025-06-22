@@ -25,6 +25,10 @@ MindLedger soll mehr sein als eine klassische Notiz-App: Es ermöglicht DMs, **i
 
 MindLedger richtet sich an Spielleiter, die **mehr Struktur wollen – ohne zusätzliche Komplexität.**
 
+## Vorschau
+> Dies ist der aktuelle UI-Entwurf. Das finale Design kann und wird sich noch ändern.
+![UI Screenshot](screenshots/uidraft_light.png)
+
 ## Projektstatus
 
 Das Projekt befindet sich in der aktiven Entwicklung. Die grundlegende Architektur ist bereits implementiert:
