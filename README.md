@@ -54,12 +54,12 @@ Das Projekt befindet sich in der aktiven Entwicklung. Die grundlegende Architekt
 
 ## Was bisher umgesetzt wurde
 
-- Projektstruktur, Solution Setup
-- Dependency Injection über `Microsoft.Extensions.Hosting`
-- EF Core + SQLite + Migrations
-- ViewModels mit `CommunityToolkit.Mvvm`
-- Theme-Integration mit WPF UI
-- UI-Layout & Navigation ohne Editorlogik
+- [x] Projektstruktur, Solution Setup
+- [x] Dependency Injection über `Microsoft.Extensions.Hosting`
+- [x] EF Core + SQLite + Migrations
+- [x] ViewModels mit `CommunityToolkit.Mvvm`
+- [x] Theme-Integration mit WPF UI
+- [x] UI-Layout & Navigation ohne Editorlogik
 
 ---
 
