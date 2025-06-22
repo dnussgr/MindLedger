@@ -37,8 +37,7 @@ Das Projekt befindet sich in der aktiven Entwicklung. Die grundlegende Architekt
 
 ## In Arbeit
 
-- UI für Kampagnen-Navigation & Accordion-Listen  
-- Markdown-Editor inkl. Export  
+- Text-Editor inkl. Export  
 - Multitagging beim Notizerstellen  
 - Such- und Filterfeature
 
@@ -60,16 +59,17 @@ Das Projekt befindet sich in der aktiven Entwicklung. Die grundlegende Architekt
 - ViewModel-Basis mit `CommunityToolkit.Mvvm`
 - Theme-Setup über WPF-UI
 - Startup über Dependency Injection
+- UI - Grundsätzliches Design vorhanden, bis auf Editor noch keine Funktion
 
 ---
 
 ## Nächste Schritte
 
-- [ ] Kampagnen-Dropdown & Kontextwechsel  
-- [ ] Accordion-Navigation (Sessions, NPCs…)  
+- [ ] Kampagnen-Dropdown & Kontextwechsel - Funktion  
+- [ ] Accordion-Navigation (Sessions, NPCs…) - Funktion  
 - [ ] Tag-Auswahl & Erstellung im Editor  
 - [ ] Markdown-Preview & `.md` Export  
-- [ ] Suche, Sortierung & Filterung
+- [ ] Suche, Sortierung & Filterung - Funktion
 
 ## Verwendete Technologien
 
