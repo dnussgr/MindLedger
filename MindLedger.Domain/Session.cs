@@ -9,8 +9,6 @@ namespace MindLedger.Domain
     public class Session : NoteBase
     {
         public int SessionNumber { get; set; }
-        public Guid CampaignId { get; set; }
-        public Campaign Campaign { get; set; } = null!;
     }
 
     public class Charakter : NoteBase { }

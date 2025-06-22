@@ -26,7 +26,7 @@ namespace MindLedger.App
                     services.AddScoped<MainWindowViewModel>();
                     services.AddSingleton<MainWindow>();
                     services.AddScoped<ITagRepository, SqliteTagRepository>();
-
+                    services.AddScoped<ICampaignRepository, SqliteCampaignRepository>();
                 })
                 .Build();
         }
