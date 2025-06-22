@@ -4,7 +4,8 @@
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         Title="MindLedger"
         Height="750" Width="1200"
-        MinHeight="600" MinWidth="1000">
+        MinHeight="600" MinWidth="1000"
+        Icon="pack://application:,,,/MindLedger.App;component/Assets/MindLedgerIcon.png">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
