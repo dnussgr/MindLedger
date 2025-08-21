@@ -59,6 +59,7 @@ Das Projekt befindet sich in der aktiven Entwicklung. Die grundlegende Architekt
 ## Was bisher umgesetzt wurde
 
 - [x] Projektstruktur, Solution Setup
+- [x] Asynchrone Architektur mit konsequenter Nutzung von async/await (zB bei Datenbank- und IO-Zugriffen)
 - [x] Dependency Injection über `Microsoft.Extensions.Hosting`
 - [x] EF Core + SQLite + Migrations
 - [x] ViewModels mit `CommunityToolkit.Mvvm`
